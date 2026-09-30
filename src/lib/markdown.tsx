@@ -45,7 +45,7 @@ export function Markdown({ text }: { text: string }) {
         <table key={`b${blocks.length}`}>
           <thead>
             <tr>
-              {head.map((cell, index) => (
+              {(head ?? []).map((cell, index) => (
                 <th key={index}>{inline(cell, `th${index}`)}</th>
               ))}
             </tr>
@@ -85,8 +85,9 @@ export function Markdown({ text }: { text: string }) {
     const heading = /^(#{1,4})\s+(.*)$/.exec(trimmed);
     if (heading) {
       flush();
-      const level = heading[1].length;
-      const content = inline(heading[2], `h${blocks.length}`);
+      const level = (heading[1] ?? "#").length;
+      const content = inline(heading[2] ?? "", `h${blocks.length}`);
+
       blocks.push(
         level === 1 ? (
           <h1 key={`b${blocks.length}`}>{content}</h1>
@@ -113,7 +114,7 @@ export function Markdown({ text }: { text: string }) {
       const isOrdered = Boolean(ordered);
       if (list && list.ordered !== isOrdered) flush();
       list = list ?? { ordered: isOrdered, items: [] };
-      list.items.push((ordered ? ordered[1] : bullet![1]).trim());
+      list.items.push(((ordered ? ordered[1] : bullet?.[1]) ?? "").trim());
       continue;
     }
 
