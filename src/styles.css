@@ -26,8 +26,11 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -143,5 +146,92 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
   }
 }
+
+/* Generated teaching material: headings, lists and tables from markdown-ish output */
+@utility material {
+  & h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+  }
+  & h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  & h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  & p {
+    margin-top: 0.6rem;
+    line-height: 1.65;
+  }
+  & ul,
+  & ol {
+    margin-top: 0.6rem;
+    padding-left: 1.4rem;
+    line-height: 1.7;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li {
+    margin-top: 0.3rem;
+  }
+  & strong {
+    font-weight: 700;
+  }
+  & table {
+    width: 100%;
+    margin-top: 0.8rem;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+  & th,
+  & td {
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+  }
+  & th {
+    background-color: var(--muted);
+    font-weight: 700;
+  }
+  & hr {
+    margin: 1.25rem 0;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-sheet {
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  body {
+    background: white;
+  }
+}
+
