@@ -1,14 +1,16 @@
-# Welcome to your Lovable project
+# TeacherMate AI
+
+im buliding a AI content genetator that will generate text  or image its called teacher mate where its able to produce worksheet for all grades ,lesson plans ,explain difficult concept and give memo i have done a code using vs that has html,css,and javascript but still only generate text for fractions i want it to generate all the topics and showw all the information it is asked for
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/be120bc5-b812-4bf2-887b-12470d880b65).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +22,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
