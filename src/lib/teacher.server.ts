@@ -111,10 +111,7 @@ export async function handleGenerate(request: Request) {
     return new Response("A subject and a topic are required.", { status: 400 });
   }
 
-  const messages: ModelMessage[] = [
-    { role: "system", content: SYSTEM },
-    { role: "user", content: buildPrompt(input) },
-  ];
+  const messages: ModelMessage[] = [{ role: "user", content: buildPrompt(input) }];
 
   const runIdFetch = createLovableAiGatewayRunIdFetch(getLovableAiGatewayRunId(request));
   const provider = createOpenAI({
@@ -126,6 +123,7 @@ export async function handleGenerate(request: Request) {
 
   const result = streamText({
     model: provider.responses(MODEL),
+    instructions: SYSTEM,
     messages,
     abortSignal: request.signal,
     providerOptions: {
