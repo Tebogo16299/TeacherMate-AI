@@ -3,6 +3,7 @@
 im buliding a AI content genetator that will generate text  or image its called teacher mate where its able to produce worksheet for all grades ,lesson plans ,explain difficult concept and give memo i have done a code using vs that has html,css,and javascript but still only generate text for fractions i want it to generate all the topics and showw all the information it is asked for
 
 This project was built with [Lovable](https://lovable.dev).
+Demo : https://teachermate-ai-genius.lovable.app
 
 ## Build with Lovable
 
